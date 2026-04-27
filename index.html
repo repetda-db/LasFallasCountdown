@@ -26,31 +26,45 @@
 
 <!-- ── Info Modal ───────────────────────────────── -->
 <div class="modal-overlay" id="info-modal" role="dialog" aria-modal="true">
-  <div class="modal-box">
-    <div class="modal-title">
-      <span>📷</span>
-      <span id="modal-title-text">Image Info</span>
-    </div>
+  <div class="modal-box modal-box-wide">
     <button class="modal-close" id="modal-close-btn" aria-label="Close">✕</button>
-    <div class="info-row">
-      <span class="info-key" id="info-key-title">Photo Title</span>
-      <span class="info-val" id="info-val-title">—</span>
-    </div>
-    <div class="info-row">
-      <span class="info-key" id="info-key-loc">Location</span>
-      <span class="info-val" id="info-val-loc">—</span>
-    </div>
-    <div class="info-row">
-      <span class="info-key" id="info-key-date">Date</span>
-      <span class="info-val" id="info-val-date">—</span>
-    </div>
-    <div class="info-row">
-      <span class="info-key" id="info-key-src">Source</span>
-      <span class="info-val" id="info-val-src">—</span>
-    </div>
-    <div class="info-row">
-      <span class="info-key" id="info-key-photo">Photographer</span>
-      <span class="info-val" id="info-val-photo">—</span>
+
+    <!-- Conteneur flex : image à gauche, infos à droite -->
+    <div class="modal-content-flex">
+
+      <!-- Côté gauche : image -->
+      <div class="modal-image-wrap">
+        <img id="modal-image" src="" alt="Falla photo" />
+      </div>
+
+      <!-- Côté droit : infos -->
+      <div class="modal-info-wrap">
+        <div class="modal-title">
+          <span>📷</span>
+          <span id="modal-title-text">Image Info</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key" id="info-key-title">Photo Title</span>
+          <span class="info-val" id="info-val-title">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key" id="info-key-loc">Location</span>
+          <span class="info-val" id="info-val-loc">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key" id="info-key-date">Date</span>
+          <span class="info-val" id="info-val-date">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key" id="info-key-src">Source</span>
+          <span class="info-val" id="info-val-src">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key" id="info-key-photo">Photographer</span>
+          <span class="info-val" id="info-val-photo">—</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
