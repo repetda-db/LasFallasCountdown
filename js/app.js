@@ -270,6 +270,7 @@ function bindEvents() {
     if (e.target === document.getElementById('info-modal')) closeModal('info-modal');
   });
   document.getElementById('nav-history-btn').addEventListener('click', showHistory);
+  document.getElementById('nav-mejor fan-btn').addEventListener('click', showFan);
   document.getElementById('nav-home-btn').addEventListener('click', showHome);
 }
 
