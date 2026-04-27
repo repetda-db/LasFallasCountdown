@@ -14,6 +14,7 @@ let theme      = localStorage.getItem('fallas_theme') || 'day';
 let imagesData = [];
 let t9n        = {};
 let timerID    = null;
+let currentImage = null;
 
 // ── Init ──────────────────────────────────────────
 async function init() {
@@ -104,6 +105,7 @@ function setDailyBackground() {
   const today   = new Date();
   const dayIdx  = today.getDate() % imagesData.length;
   const imgData = imagesData[dayIdx];
+  currentImage = imgData
 
   const bg = document.getElementById('bg-image');
   bg.style.opacity = 0;
@@ -243,6 +245,15 @@ function startFireworks() {
 
 // ── Modal helpers ─────────────────────────────────
 function openModal(id) {
+  if (id === 'info-modal' && currentImage) {
+    document.getElementById('modal-image').src        = 'images/' + currentImage.filename;
+    document.getElementById('modal-image').alt        = currentImage.title || 'Falla photo';
+    document.getElementById('info-val-title').textContent = currentImage.title        || '—';
+    document.getElementById('info-val-loc').textContent   = currentImage.location     || '—';
+    document.getElementById('info-val-date').textContent  = currentImage.date         || '—';
+    document.getElementById('info-val-src').textContent   = currentImage.source       || '—';
+    document.getElementById('info-val-photo').textContent = currentImage.photographer || '—';
+  }
   document.getElementById(id).classList.add('open');
 }
 function closeModal(id) {
