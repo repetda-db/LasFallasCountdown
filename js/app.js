@@ -249,14 +249,23 @@ function closeModal(id) {
   document.getElementById(id).classList.remove('open');
 }
 
-// ── History toggle ────────────────────────────────
+// ── Section toggles ───────────────────────────────
 function showHistory() {
   document.getElementById('hero-content').classList.add('hidden');
   document.getElementById('history-section').classList.add('visible');
+  document.getElementById('fan-section').classList.remove('visible');
 }
+
+function showFan() {
+  document.getElementById('hero-content').classList.add('hidden');
+  document.getElementById('fan-section').classList.add('visible');
+  document.getElementById('history-section').classList.remove('visible');
+}
+
 function showHome() {
   document.getElementById('hero-content').classList.remove('hidden');
   document.getElementById('history-section').classList.remove('visible');
+  document.getElementById('fan-section').classList.remove('visible');
 }
 
 // ── Events ────────────────────────────────────────
@@ -270,7 +279,7 @@ function bindEvents() {
     if (e.target === document.getElementById('info-modal')) closeModal('info-modal');
   });
   document.getElementById('nav-history-btn').addEventListener('click', showHistory);
-  document.getElementById('nav-mejor fan-btn').addEventListener('click', showFan);
+  document.getElementById('nav-fan-btn').addEventListener('click', showFan);
   document.getElementById('nav-home-btn').addEventListener('click', showHome);
 }
 
